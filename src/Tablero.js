@@ -9,6 +9,10 @@ export default function Tablero() {
         { id: 2, anverso: "anverso.webp", reverso: "reverso.webp", volteada: true },
         { id: 3, anverso: "anverso.webp", reverso: "reverso.webp", volteada: true },
         { id: 4, anverso: "anverso.webp", reverso: "reverso.webp", volteada: true },
+        { id: 5, anverso: "anverso.webp", reverso: "reverso.webp", volteada: true },
+        { id: 6, anverso: "anverso.webp", reverso: "reverso.webp", volteada: true },
+        { id: 7, anverso: "anverso.webp", reverso: "reverso.webp", volteada: true },
+        { id: 8, anverso: "anverso.webp", reverso: "reverso.webp", volteada: true },
     ]);
 
     return (

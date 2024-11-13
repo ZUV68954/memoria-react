@@ -21,7 +21,7 @@ function Carta({ id, anverso, reverso, volteada }) {
         cambio();
     }, []);
 
-    return <img src={nombreImagen} onClick={cambio} alt="" class="border border-primary img-fluid" id={id}></img>
+    return <img src={nombreImagen} onClick={cambio} alt="" class="border border-primary img-fluid mb-2" id={id}></img>
 }
 
 export default Carta;
