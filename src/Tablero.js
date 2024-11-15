@@ -1,53 +1,78 @@
-import { useState } from 'react';
-import Carta from './Carta';
-import 'bootstrap/dist/css/bootstrap.css';
-export default function Tablero() {
+import React, { useState } from "react";
+import Carta from "./Carta";
+import "./styles.css";
 
-    // La idea es definir un array de cartas, así les podemos poner distintas imágenes y posiblemente compararlas (espero).
-    const [cartas] = useState([
-        { id: 1, anverso: "gallo.webp", reverso: "reverso.webp" },
-        { id: 2, anverso: "vaca.webp", reverso: "reverso.webp" },
-        { id: 3, anverso: "gallo.webp", reverso: "reverso.webp" },
-        { id: 4, anverso: "gallo.webp", reverso: "reverso.webp" },
-        { id: 5, anverso: "vaca.webp", reverso: "reverso.webp" },
-        { id: 6, anverso: "burro.webp", reverso: "reverso.webp" },
-        { id: 7, anverso: "gallo.webp", reverso: "reverso.webp" },
-        { id: 8, anverso: "burro.webp", reverso: "reverso.webp" },
-    ]);
+const Tablero = () => {
+  const [cartas, setCartas] = useState(generateDeck());
+  const [volteadas, setVolteadas] = useState([]);
+  
+  // Función para manejar el click en una carta
+  const manejarClick = (id) => {
+    if (volteadas.length === 2) return; // Solo puede voltear dos cartas a la vez
+    const nuevaCarta = cartas.map((carta) => {
+      if (carta.id === id) {
+        return { ...carta, volteada: true };
+      }
+      return carta;
+    });
+    setCartas(nuevaCarta);
 
-    const [volteada, setVolteada] = useState(false);
-    const [totalVolteadas, setTotalVolteadas] = useState(1);
+    setVolteadas([...volteadas, id]);
+  };
 
-    const comprobar = (id) => {
-        if (volteada) {
-            setVolteada(false);
-            setTotalVolteadas(totalVolteadas + 1);
-        }
-        else if (!volteada) {
-            setVolteada(true);
-            setTotalVolteadas(totalVolteadas - 1);
-        }
+  // Comprobar si las dos cartas volteadas coinciden
+  if (volteadas.length === 2) {
+    const [carta1, carta2] = volteadas;
+    const carta1Data = cartas.find((carta) => carta.id === carta1);
+    const carta2Data = cartas.find((carta) => carta.id === carta2);
+    if (carta1Data.valor !== carta2Data.valor) {
+      setTimeout(() => {
+        const nuevaCarta = cartas.map((carta) => {
+          if (carta.id === carta1 || carta.id === carta2) {
+            return { ...carta, volteada: false };
+          }
+          return carta;
+        });
+        setCartas(nuevaCarta);
+        setVolteadas([]);
+      }, 1000);
+    } else {
+      setVolteadas([]);
     }
+  }
 
-    return (
-        <div class="container pt-5">
-            <div class="row">
-                {cartas.map((carta) => (
-                    <div class="col-lg-3">
-                        <Carta
-                            id={carta.id}
-                            anverso={carta.anverso}
-                            reverso={carta.reverso}
-                            comprobar={comprobar}
-                        />
-                    </div>
-                ))
-                }
-            </div>
-            <div>
-                <p>Son un total de {totalVolteadas}</p>
-            </div>
-        </div>
+  return (
+    <div className="tablero">
+      {cartas.map((carta) => (
+        <Carta
+          key={carta.id}
+          id={carta.id}
+          imagen={carta.valor}
+          volteada={carta.volteada}
+          manejarClick={manejarClick}
+        />
+      ))}
+    </div>
+  );
+};
 
-    )
-}
+// Genera un mazo de 8 cartas (4 pares) usando imágenes
+const generateDeck = () => {
+  const imagenes = [
+      "/gatito.jpg", "gallo.webp", "img3.jpg", "vaca.webp"
+  ];
+  let deck = [];
+  
+  // Creamos el mazo con 2 cartas por cada imagen
+  imagenes.forEach((imagen, index) => {
+    deck.push({ id: index * 2, valor: imagen, volteada: false });
+    deck.push({ id: index * 2 + 1, valor: imagen, volteada: false });
+  });
+  
+  // Mezclamos las cartas
+  deck = deck.sort(() => Math.random() - 0.5);
+  
+  return deck;
+};
+
+export default Tablero;

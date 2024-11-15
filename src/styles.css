@@ -1,0 +1,42 @@
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(4, 100px); /* 4 columnas para 8 cartas */
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 450px;
+  }
+  
+  .carta {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #bbb;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.3s;
+    overflow: hidden;
+  }
+  
+  .carta-back {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .carta img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .carta.volteada {
+    background-color: #fff;
+    transform: rotateY(180deg);
+  }
+  
+  .carta:not(.volteada) {
+    background-color: #bbb;
+  }
+  
