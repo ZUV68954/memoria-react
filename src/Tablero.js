@@ -23,7 +23,7 @@ export default function Tablero() {
             setVolteada(false);
             setTotalVolteadas(totalVolteadas + 1);
         }
-        else {
+        else if (!volteada) {
             setVolteada(true);
             setTotalVolteadas(totalVolteadas - 1);
         }
