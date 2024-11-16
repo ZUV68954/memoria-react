@@ -59,7 +59,7 @@ const Tablero = () => {
 // Genera un mazo de 8 cartas (4 pares) usando imágenes
 const generateDeck = () => {
   const imagenes = [
-      "/gatito.jpg", "gallo.webp", "img3.jpg", "vaca.webp"
+      "gato.webp", "gallo.webp", "perro.png", "vaca.webp"
   ];
   let deck = [];
   

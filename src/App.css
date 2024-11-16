@@ -1,17 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
@@ -24,15 +10,34 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Estilos para la carta */
+.carta {
+  height: 200px;  /* Aumenta la altura de las cartas */
+  width: 200px;   /* Aumenta el ancho de las cartas */
+  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Asegúrate de que las imágenes se ajusten al nuevo tamaño */
+.carta img {
+  height: 100%;  /* La imagen ocupa el 100% de la altura de la carta */
+  width: 100%;   /* La imagen ocupa el 100% del ancho de la carta */
+}
+
+/* Estilo para el reverso de la carta */
+.carta-back {
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;  /* El reverso ocupa todo el espacio de la carta */
+  width: 100%;   /* El reverso ocupa todo el espacio de la carta */
+  font-size: 36px; /* Opcional: Aumenta el tamaño del texto en el reverso */
+  font-weight: bold;
+  color: #333;
 }
