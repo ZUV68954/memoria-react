@@ -8,6 +8,7 @@ function App() {
   return (
       <div className="App">
         <header className="App-header">
+          <h1>Juego de Memoria</h1>
           <Tablero />
         </header>
       </div>

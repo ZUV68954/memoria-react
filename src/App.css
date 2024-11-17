@@ -1,13 +1,11 @@
 
 .App-header {
-  background-color: #282c34;
+  background-color: #000000;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 /* Estilos para la carta */
@@ -18,9 +16,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
-  cursor: pointer;
-  position: relative;
 }
 
 /* Asegúrate de que las imágenes se ajusten al nuevo tamaño */
@@ -37,7 +32,4 @@
   justify-content: center;
   height: 100%;  /* El reverso ocupa todo el espacio de la carta */
   width: 100%;   /* El reverso ocupa todo el espacio de la carta */
-  font-size: 36px; /* Opcional: Aumenta el tamaño del texto en el reverso */
-  font-weight: bold;
-  color: #333;
 }

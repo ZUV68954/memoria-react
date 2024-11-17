@@ -35,7 +35,7 @@ const Tablero = () => {
         });
         setCartas(nuevaCarta);
         setVolteadas([]);
-      }, 1000);
+      }, 1500);
     } else {
       setVolteadas([]);
     }
