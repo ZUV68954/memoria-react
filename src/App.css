@@ -1,35 +1,35 @@
 
 .App-header {
-  background-color: #000000;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    background-color: #000000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Estilos para la carta */
 .carta {
-  height: 200px;  /* Aumenta la altura de las cartas */
-  width: 200px;   /* Aumenta el ancho de las cartas */
-  border: 2px solid #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    height: 200px; /* Aumenta la altura de las cartas */
+    width: 200px; /* Aumenta el ancho de las cartas */
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Asegúrate de que las imágenes se ajusten al nuevo tamaño */
 .carta img {
-  height: 100%;  /* La imagen ocupa el 100% de la altura de la carta */
-  width: 100%;   /* La imagen ocupa el 100% del ancho de la carta */
+    height: 100%; /* La imagen ocupa el 100% de la altura de la carta */
+    width: 100%; /* La imagen ocupa el 100% del ancho de la carta */
 }
 
 /* Estilo para el reverso de la carta */
 .carta-back {
-  background-color: #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;  /* El reverso ocupa todo el espacio de la carta */
-  width: 100%;   /* El reverso ocupa todo el espacio de la carta */
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* El reverso ocupa todo el espacio de la carta */
+    width: 100%; /* El reverso ocupa todo el espacio de la carta */
 }
